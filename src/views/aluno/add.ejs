@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Alunos</title>
+    <style>
+        table,tr,td, th{
+            border: 1px solid turquoise;   
+        }
+        tr, td, th{
+            padding: 10px;
+            text-align: center;
+        }
+        ul{
+            margin-bottom: 15px;
+        }
+        input{
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        img{
+            max-width:80px ;
+            max-height: 80px;
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a href="/admin1/aluno/">Listar</a>
+            
+        </li>
+        <li>
+            <a href="/admin1/aluno/add">Adicionar</a>
+            
+        </li>
+    </ul>
+    <form method="post" enctype="multipart/form-data"> 
+       Nome: <input type="text" name= "nome" placeholder="Digite seu nome" ><br>
+       Turma: <input type="text" name= "turma" placeholder="Digite sua turma" ><br>
+       Email: <input type="email" name= "email" placeholder="Digite seu email" ><br> 
+       Senha: <input type="password" name= "senha" placeholder="Digite sua senha" ><br> 
+       Foto Perfil: <input type="file" name= "foto" ><br> 
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

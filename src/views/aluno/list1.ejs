@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos</title>
+    <style>
+        table,tr,td, th{
+            border: 1px solid turquoise;   
+        }
+        tr, td, th{
+            padding: 10px;
+            text-align: center;
+        }
+        ul{
+            margin-bottom: 15px;
+        }
+        input{
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        img{
+            max-width:80px ;
+            max-height: 80px;
+            
+        }
+        #icon{
+            max-height: 40px;
+            max-width: 40px;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="/admin1/aluno/">Listar</a>
+            
+        </li>
+        <li>
+            <a href="/admin1/aluno/add">Adicionar</a>
+            
+        </li>
+    </ul>
+    <form  method="post">
+        <input type="text" name="pesquisar" >
+        <input type="submit" value="Pesquisar">
+    </form>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>nome</th>
+            <th>turma</th>
+            <th>email</th>
+            <th>senha</th>
+            <th>foto</th>
+            <th>edita</th>
+            <th>deleta</th>
+        </tr>
+        <% Alunos.forEach(function(aluno){ %>
+        <tr>
+            <td><%=aluno.id%></td>
+            <td><%=aluno.nome%></td>
+            <td><%=aluno.turma%></td>
+            <td><%=aluno.email%></td>
+            <td><%=aluno.senha%></td>
+            <td>
+                <img src ="/uploads/<%=aluno.foto%>" >
+               
+            </td>
+            <td>edita</td>
+            <td>
+                <a href="/admin1/aluno/del/<%=aluno.id%>">
+                    <img src="/li.png" id="icon" >
+                </a>
+            </td>
+
+        </tr>
+        <%  })   %>
+    </table>
+    <h2><%=msg%></h2>
+</body>
+</html>
